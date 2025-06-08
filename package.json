@@ -1,6 +1,6 @@
 {
   "name": "@lilianaa/configs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Linter configurations for most of my apps",
   "keywords": ["prettier", "eslint"],
   "author": "Mia Pilchová <pilchova@lilianaa.dev>",
