@@ -3,9 +3,9 @@
 import eslint from "@eslint/js";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
+import vue from "eslint-plugin-vue";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import vue from "eslint-plugin-vue";
 
 /**
  * @type {import('typescript-eslint').ConfigWithExtends["rules"]}
@@ -26,7 +26,7 @@ const BASE_RULES = {
   "import/no-anonymous-default-export": "off",
   "@typescript-eslint/ban-ts-comment": "warn",
   "no-useless-escape": "off",
-}
+};
 
 /**
  * @type {import('typescript-eslint').ConfigWithExtends["rules"]}
@@ -54,7 +54,7 @@ const VUE_RULES = {
 export function createConfig({
   vue: useVue = false,
   ignores = ["node_modules", "dist"],
-  globals: globalsKeys = ["jest", "node"]
+  globals: globalsKeys = ["jest", "node"],
 } = {}) {
   if (useVue) {
     globalsKeys.push("browser");
@@ -66,8 +66,8 @@ export function createConfig({
     eslint.configs.recommended,
     tseslint.configs.eslintRecommended,
     ...tseslint.configs.recommended,
-    eslintPluginPrettierRecommended,
     ...(useVue ? vue.configs["flat/recommended"] : []),
+    eslintPluginPrettierRecommended,
     {
       plugins: {
         "simple-import-sort": simpleImportSort,
@@ -78,18 +78,17 @@ export function createConfig({
       },
       languageOptions: {
         parserOptions: {
-          ...(useVue ? { parser: "@typescript-eslint/parser" } : {})
+          ...(useVue ? { parser: "@typescript-eslint/parser" } : {}),
         },
         globals: globalsKeys.reduce((acc, curr) => {
-          return Object.assign(acc, globals[curr])
+          return Object.assign(acc, globals[curr]);
         }, {}),
       },
       ignores: [...new Set(ignores)],
     },
   );
-  
 }
 
-const defaultConfig = createConfig()
+const defaultConfig = createConfig();
 
 export default defaultConfig;

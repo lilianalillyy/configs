@@ -1,6 +1,6 @@
 {
   "name": "@lilianaa/configs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Linter configurations for most of my apps",
   "keywords": [
     "prettier",
