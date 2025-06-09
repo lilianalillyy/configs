@@ -1,8 +1,11 @@
 {
   "name": "@lilianaa/configs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Linter configurations for most of my apps",
-  "keywords": ["prettier", "eslint"],
+  "keywords": [
+    "prettier",
+    "eslint"
+  ],
   "author": "Mia Pilchová <pilchova@lilianaa.dev>",
   "license": "MIT",
   "packageManager": "pnpm@10.11.1",
@@ -15,6 +18,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-vue": "^10.2.0",
     "globals": "^16.2.0",
     "prettier": "^3.5.3",
     "typescript-eslint": "^8.33.1"
