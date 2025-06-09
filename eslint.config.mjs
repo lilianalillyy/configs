@@ -77,6 +77,9 @@ export function createConfig({
         ...(useVue ? VUE_RULES : {}),
       },
       languageOptions: {
+        parserOptions: {
+          ...(useVue ? { parser: "@typescript-eslint/parser" } : {})
+        },
         globals: globalsKeys.reduce((acc, curr) => {
           return Object.assign(acc, globals[curr])
         }, {}),
